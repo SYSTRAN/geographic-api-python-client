@@ -1,5 +1,5 @@
 # Systran Geographic Client Library.
-This is a Python implementation of the [Systran Geographic](https://api-platform-stag.systran.net/reference/geographic) Client Library.
+This is a Python implementation of the [Systran Geographic](https://platform.systran.net/reference/geographic) Client Library.
 
 ## Requirements.
 Python 2.7 and later.

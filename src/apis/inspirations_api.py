@@ -35,7 +35,7 @@ class InspirationsApi(object):
             self.api_client = api_client
         else:
             if not configuration.api_client:
-                configuration.api_client = ApiClient('https://platformapi-stag.systran.net:8904')
+                configuration.api_client = ApiClient('https://api-platform.systran.net')
             self.api_client = configuration.api_client
     
     

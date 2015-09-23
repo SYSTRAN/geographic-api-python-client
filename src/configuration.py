@@ -77,13 +77,12 @@ def auth_settings():
            }
 
 # Default Base url
-host = "https://platformapi-stag.systran.net:8904"
+host = "https://api-platform.systran.net"
 
 # Default api client
 api_client = None
              
 # Authentication settings
-
 api_key = {}
 api_key_prefix = {}
 username = ''
