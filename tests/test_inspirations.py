@@ -4,15 +4,15 @@
 import os
 import unittest
 
-import src
-import src.configuration
+import systranGeographicApi
+import systranGeographicApi.configuration
 
 class InspirationsApiTests(unittest.TestCase):
     def setUp(self):
         api_key_file = os.path.join(os.path.dirname(__file__), "../", "api_key.txt")
-        src.configuration.load_api_key(api_key_file)
-        self.api_client = src.ApiClient()
-        self.inspirations_api = src.InspirationsApi(self.api_client)
+        systranGeographicApi.configuration.load_api_key(api_key_file)
+        self.api_client = systranGeographicApi.ApiClient()
+        self.inspirations_api = systranGeographicApi.InspirationsApi(self.api_client)
 
     def test_geographic_inspirations_get(self):
         result = self.inspirations_api.geographic_inspirations_get()
