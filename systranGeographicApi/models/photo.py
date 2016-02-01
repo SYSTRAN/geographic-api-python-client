@@ -32,21 +32,21 @@ class Photo(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
-            'label': 'str',
+            'title': 'str',
             'height': 'float',
             'width': 'float',
-            'ref': 'str'
+            'url': 'str'
         }
 
         self.attribute_map = {
-            'label': 'label',
+            'title': 'title',
             'height': 'height',
             'width': 'width',
-            'ref': 'ref'
+            'url': 'url'
         }
         
         # Label
-        self.label = None  # str
+        self.title = None  # str
         
         # Height
         self.height = None  # float
@@ -54,8 +54,8 @@ class Photo(object):
         # Width
         self.width = None  # float
         
-        # Reference
-        self.ref = None  # str
+        # URL
+        self.url = None  # str
         
 
     def __repr__(self):

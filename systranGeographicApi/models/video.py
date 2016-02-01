@@ -32,20 +32,20 @@ class Video(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
-            'label': 'str',
-            'ref': 'str'
+            'title': 'str',
+            'url': 'str'
         }
 
         self.attribute_map = {
-            'label': 'label',
-            'ref': 'ref'
+            'title': 'title',
+            'url': 'url'
         }
         
         # Label
-        self.label = None  # str
+        self.title = None  # str
         
-        # Reference
-        self.ref = None  # str
+        # URL
+        self.url = None  # str
         
 
     def __repr__(self):

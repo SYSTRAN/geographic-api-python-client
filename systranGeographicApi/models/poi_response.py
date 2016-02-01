@@ -32,16 +32,21 @@ class PoiResponse(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
+            'error': 'ErrorResponse',
             'total': 'int',
             'offset': 'int',
             'points_of_interest': 'list[LitePOI]'
         }
 
         self.attribute_map = {
+            'error': 'error',
             'total': 'total',
             'offset': 'offset',
             'points_of_interest': 'pointsOfInterest'
         }
+        
+        # Error at request level
+        self.error = None  # ErrorResponse
         
         # Total number of elements matching the criteria (for pagination)
         self.total = None  # int

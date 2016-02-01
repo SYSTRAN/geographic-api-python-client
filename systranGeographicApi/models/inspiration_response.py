@@ -32,16 +32,21 @@ class InspirationResponse(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
+            'error': 'ErrorResponse',
             'total': 'int',
             'offset': 'int',
             'inspirations': 'list[Inspiration]'
         }
 
         self.attribute_map = {
+            'error': 'error',
             'total': 'total',
             'offset': 'offset',
             'inspirations': 'inspirations'
         }
+        
+        # Error at request level
+        self.error = None  # ErrorResponse
         
         # Total number of elements matching the criteria (for pagination)
         self.total = None  # int

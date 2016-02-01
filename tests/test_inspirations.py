@@ -14,8 +14,40 @@ class InspirationsApiTests(unittest.TestCase):
         self.api_client = systranGeographicApi.ApiClient()
         self.inspirations_api = systranGeographicApi.InspirationsApi(self.api_client)
 
-    def test_geographic_inspirations_get(self):
-        result = self.inspirations_api.geographic_inspirations_get()
+    def test_geographic_inspirations_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_list_get()
+        self.assertIsNotNone(result)
+        print result.__repr__()
+
+    def test_geographic_inspirations_dossiers_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_dossiers_list_get()
+        self.assertIsNotNone(result)
+        print result.__repr__()
+
+    def test_geographic_inspirations_events_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_events_list_get()
+        self.assertIsNotNone(result)
+        print result.__repr__()
+
+    def test_geographic_inspirations_get_get(self):
+        id = "56600afb14c46414e0275eb3"
+        print 'Use a valid "id" and uncomment below codes to test'
+        # result = self.inspirations_api.geographic_inspirations_get_get(id=id)
+        # self.assertIsNotNone(result)
+        # print result.__repr__()
+
+    def test_geographic_inspirations_news_in_brief_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_news_in_brief_list_get()
+        self.assertIsNotNone(result)
+        print result.__repr__()
+
+    def test_geographic_inspirations_slide_shows_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_slide_shows_list_get()
+        self.assertIsNotNone(result)
+        print result.__repr__()
+
+    def test_geographic_inspirations_tests_list_get(self):
+        result = self.inspirations_api.geographic_inspirations_tests_list_get()
         self.assertIsNotNone(result)
         print result.__repr__()
 

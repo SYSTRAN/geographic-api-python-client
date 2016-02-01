@@ -32,12 +32,17 @@ class SupportedLanguagesResponse(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
+            'error': 'ErrorResponse',
             'languages': 'list[str]'
         }
 
         self.attribute_map = {
+            'error': 'error',
             'languages': 'languages'
         }
+        
+        # Error at request level
+        self.error = None  # ErrorResponse
         
         # Array of supported languages
         self.languages = None  # list[str]

@@ -54,7 +54,7 @@ class Review(object):
         # Author
         self.author = None  # str
         
-        # Rating
+        # Rating (from 1 to 5)
         self.rating = None  # int
         
 

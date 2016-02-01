@@ -33,7 +33,7 @@ class FullPOI(object):
         """
         self.systran_types = {
             'id': 'str',
-            'location': 'FullLocation',
+            'location': 'FullPOILocation',
             'name': 'str',
             'types': 'list[str]',
             'rating': 'int',
@@ -69,7 +69,7 @@ class FullPOI(object):
         self.id = None  # str
         
         # Location
-        self.location = None  # FullLocation
+        self.location = None  # FullPOILocation
         
         # Name
         self.name = None  # str
@@ -77,10 +77,10 @@ class FullPOI(object):
         # Types, ordered from general to specific
         self.types = None  # list[str]
         
-        # Rating
+        # Rating (from 1 to 5)
         self.rating = None  # int
         
-        # Price Level
+        # Price Level (from 0 to 3)
         self.price_level = None  # int
         
         # Contact
@@ -95,7 +95,7 @@ class FullPOI(object):
         # Array of Photos
         self.photos = None  # list[Photo]
         
-        # POI
+        # URL
         self.url = None  # str
         
         # Description content splitted in several parts

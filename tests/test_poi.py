@@ -14,64 +14,54 @@ class PoiApiTests(unittest.TestCase):
         self.api_client = systranGeographicApi.ApiClient()
         self.poi_api = systranGeographicApi.PoiApi(self.api_client)
 
-    def test_geographic_poi_supported_languages_get(self):
-        result = self.poi_api.geographic_poi_supported_languages_get()
+    def test_geographic_poi_list_get(self):
+        result = self.poi_api.geographic_poi_list_get()
         self.assertIsNotNone(result)
         print result.__repr__()
 
-    def test_geographic_poi_get(self):
-        result = self.poi_api.geographic_poi_get()
-        self.assertIsNotNone(result)
-        print result.__repr__()
-
-    def test_geographic_poi_get_with_parameters(self):
+    def test_geographic_poi_list_get_with_parameters(self):
         lat = 47.219510
         lng = -1.553694
         radius = 1000
-        result = self.poi_api.geographic_poi_get(latitude=lat, longitude=lng, radius=radius)
+        result = self.poi_api.geographic_poi_list_get(latitude=lat, longitude=lng, radius=radius)
         self.assertIsNotNone(result)
         print result.__repr__()
 
-    def test_geographic_poi_get_with_limit(self):
+    def test_geographic_poi_list_get_with_limit(self):
         lat = 47.219510
         lng = -1.553694
         radius = 1000
         limit = 10
-        result = self.poi_api.geographic_poi_get(latitude=lat, longitude=lng, radius=radius, limit=limit)
+        result = self.poi_api.geographic_poi_list_get(latitude=lat, longitude=lng, radius=radius, limit=limit)
         self.assertIsNotNone(result)
         print result.__repr__()
 
-    def test_geographic_poi_get_with_name(self):
+    def test_geographic_poi_list_get_with_name(self):
         lat = 47.219510
         lng = -1.553694
         radius = 1000
         name = ["OUEST INFO", "RHUMS ET COCKTAILS", "LES SENTIERS DE DAKAR"]
-        result = self.poi_api.geographic_poi_get(latitude=lat, longitude=lng, radius=radius, name=name)
+        result = self.poi_api.geographic_poi_list_get(latitude=lat, longitude=lng, radius=radius, name=name)
         self.assertIsNotNone(result)
         print result.__repr__()
 
-    def test_geographic_poi_get_with_filter(self):
+    def test_geographic_poi_list_get_with_filter(self):
         lat = 47.219510
         lng = -1.553694
         radius = 1000
         filter = "OUEST INFO"
-        result = self.poi_api.geographic_poi_get(latitude=lat, longitude=lng, radius=radius, filter=filter)
+        result = self.poi_api.geographic_poi_list_get(latitude=lat, longitude=lng, radius=radius, filter=filter)
         self.assertIsNotNone(result)
         print result.__repr__()
 
-    def test_geographic_poi_details_get(self):
+    def test_geographic_poi_get_get(self):
         id = "556eb3c9d61c8170d8cd6410"
-        result = self.poi_api.geographic_poi_details_get(id=id)
+        result = self.poi_api.geographic_poi_get_get(id=id)
         self.assertIsNotNone(result)
         print result.__repr__()
 
     def test_geographic_poi_types_get(self):
         result = self.poi_api.geographic_poi_types_get()
-        self.assertIsNotNone(result)
-        print result.__repr__()
-
-    def test_geographic_poi_events_get(self):
-        result = self.poi_api.geographic_poi_events_get()
         self.assertIsNotNone(result)
         print result.__repr__()
 

@@ -17,12 +17,15 @@ Copyright 2015 SYSTRAN Software, Inc. All rights reserved.
 from __future__ import absolute_import
 
 # import models into model package
+from .boundaries import Boundaries
 from .full_position import FullPosition
 from .position import Position
+from .poi_address_components import POIAddressComponents
+from .poi_address import POIAddress
 from .address_components import AddressComponents
 from .address import Address
 from .lite_location import LiteLocation
-from .location import Location
+from .full_poi_location import FullPOILocation
 from .full_location import FullLocation
 from .opening_dates import OpeningDates
 from .phone_number import PhoneNumber
@@ -35,13 +38,20 @@ from .description import Description
 from .review import Review
 from .booking import Booking
 from .lite_poi import LitePOI
-from .lite_event import LiteEvent
 from .full_poi import FullPOI
+from .destination import Destination
+from .full_destination import FullDestination
+from .chapter import Chapter
 from .inspiration import Inspiration
+from .full_inspiration import FullInspiration
 from .poi_response import PoiResponse
-from .events_response import EventsResponse
+from .destination_response import DestinationResponse
 from .inspiration_response import InspirationResponse
 from .poi_details_response import PoiDetailsResponse
 from .poi_types_response import PoiTypesResponse
+from .destination_details_response import DestinationDetailsResponse
+from .inspiration_details_response import InspirationDetailsResponse
 from .supported_languages_response import SupportedLanguagesResponse
+from .api_version_response import ApiVersionResponse
+from .error_response import ErrorResponse
 

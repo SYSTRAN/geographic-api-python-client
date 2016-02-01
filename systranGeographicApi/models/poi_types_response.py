@@ -32,12 +32,17 @@ class PoiTypesResponse(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
+            'error': 'ErrorResponse',
             'poi_types': 'list[str]'
         }
 
         self.attribute_map = {
+            'error': 'error',
             'poi_types': 'poiTypes'
         }
+        
+        # Error at request level
+        self.error = None  # ErrorResponse
         
         # POI types
         self.poi_types = None  # list[str]

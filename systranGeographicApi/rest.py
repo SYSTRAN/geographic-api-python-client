@@ -21,6 +21,7 @@ import io
 import json
 import ssl
 import certifi
+import email
 
 # python 2 and python 3 compatibility library
 from six import iteritems
@@ -147,18 +148,40 @@ class RESTClientObject(object):
         return self.process_response(r)
 
     def process_response(self, response):
-        # In the python 3, the response.data is bytes.
-        # we need to decode it to string.
-        if sys.version_info > (3,):
-            data = response.data.decode('utf8')
-        else:
-            data = response.data
-        try:
-            resp = json.loads(data)
-        except ValueError:
-            resp = data
+        result = {}
+        content_type = response.getheader(name="Content-Type")
+        if "application/json" in content_type:
+            # In the python 3, the response.data is bytes.
+            # we need to decode it to string.
+            if sys.version_info > (3,):
+                data = response.data.decode('utf8')
+            else:
+                data = response.data
+            try:
+                resp = json.loads(data)
+            except ValueError:
+                resp = data
+            result["json"] = resp
+        elif "multipart/mixed" in content_type:
+            message = "Content-Type: " + content_type + "\r\n"
+            message += response.data
+            msg = email.message_from_string(message)
 
-        return resp
+            if not msg.is_multipart():
+                result["content"] = response.data
+                print("Couldn't decode multipart body")
+            else:
+                for payload in msg.get_payload():
+                    if payload.get(name="part-name") == "detectedLanguage":
+                        result["detected_language"] = json.loads(payload.get_payload())
+                    elif payload.get(name="part-name") == "source":
+                        result["source"] = payload.get_payload()
+                    else:
+                        result["output"] = payload.get_payload()
+        else:
+            result["content"] = response.data
+
+        return result
 
     def GET(self, url, headers=None, query_params=None):
         return self.request("GET", url, headers=headers, query_params=query_params)

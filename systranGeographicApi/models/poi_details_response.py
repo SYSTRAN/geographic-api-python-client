@@ -32,15 +32,20 @@ class PoiDetailsResponse(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
-            'poi_details': 'FullPOI'
+            'error': 'ErrorResponse',
+            'result': 'FullPOI'
         }
 
         self.attribute_map = {
-            'poi_details': 'poiDetails'
+            'error': 'error',
+            'result': 'result'
         }
         
-        # Full POI details
-        self.poi_details = None  # FullPOI
+        # Error at request level
+        self.error = None  # ErrorResponse
+        
+        # Full POI data
+        self.result = None  # FullPOI
         
 
     def __repr__(self):

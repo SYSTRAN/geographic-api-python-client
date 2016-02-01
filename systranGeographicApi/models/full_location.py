@@ -32,14 +32,19 @@ class FullLocation(object):
         :param dict attribute_map: The key is attribute name and the value is json key in definition.
         """
         self.systran_types = {
+            'boundaries': 'Boundaries',
             'position': 'FullPosition',
             'address': 'Address'
         }
 
         self.attribute_map = {
+            'boundaries': 'boundaries',
             'position': 'position',
             'address': 'address'
         }
+        
+        # Boundaries defined by a polygon composed of a list of coordinates
+        self.boundaries = None  # Boundaries
         
         # Position defined by coordinates and type
         self.position = None  # FullPosition

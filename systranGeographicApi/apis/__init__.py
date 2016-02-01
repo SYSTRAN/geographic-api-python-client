@@ -18,5 +18,8 @@ from __future__ import absolute_import
 
 # import apis into api package
 from .inspirations_api import InspirationsApi
+from .destinations_api import DestinationsApi
+from .supported_languages_api import SupportedLanguagesApi
 from .poi_api import PoiApi
+from .api_version_api import ApiVersionApi
 

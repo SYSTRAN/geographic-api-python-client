@@ -66,10 +66,10 @@ class LitePOI(object):
         # Types, ordered from general to specific
         self.types = None  # list[str]
         
-        # Rating
+        # Rating (from 1 to 5)
         self.rating = None  # int
         
-        # Price Level
+        # Price Level (from 0 to 3)
         self.price_level = None  # int
         
 

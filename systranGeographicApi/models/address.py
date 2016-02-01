@@ -33,14 +33,12 @@ class Address(object):
         """
         self.systran_types = {
             'components': 'AddressComponents',
-            'formatted': 'str',
-            'vicinity': 'str'
+            'formatted': 'str'
         }
 
         self.attribute_map = {
             'components': 'components',
-            'formatted': 'formatted',
-            'vicinity': 'vicinity'
+            'formatted': 'formatted'
         }
         
         # Address components
@@ -48,9 +46,6 @@ class Address(object):
         
         # Formatted Address (Postal Address)
         self.formatted = None  # str
-        
-        # Vicinity
-        self.vicinity = None  # str
         
 
     def __repr__(self):
