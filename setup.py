@@ -32,7 +32,7 @@ REQUIRES = ["urllib3 >= 1.10", "six >= 1.9", "certifi"]
 
 setup(
     name="geographic-api-python-client",
-    version="1.0.0",
+    version="1.0.1",
     description="REST Geographic API",
     author_email="",
     url="",
