@@ -4,15 +4,15 @@
 import os
 import unittest
 
-import systranGeographicApi
-import systranGeographicApi.configuration
+import systran_geographic_api
+import systran_geographic_api.configuration
 
 class PoiApiTests(unittest.TestCase):
     def setUp(self):
         api_key_file = os.path.join(os.path.dirname(__file__), "../", "api_key.txt")
-        systranGeographicApi.configuration.load_api_key(api_key_file)
-        self.api_client = systranGeographicApi.ApiClient()
-        self.poi_api = systranGeographicApi.PoiApi(self.api_client)
+        systran_geographic_api.configuration.load_api_key(api_key_file)
+        self.api_client = systran_geographic_api.ApiClient()
+        self.poi_api = systran_geographic_api.PoiApi(self.api_client)
 
     def test_geographic_poi_list_get(self):
         result = self.poi_api.geographic_poi_list_get()

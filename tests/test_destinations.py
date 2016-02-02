@@ -4,15 +4,15 @@
 import os
 import unittest
 
-import systranGeographicApi
-import systranGeographicApi.configuration
+import systran_geographic_api
+import systran_geographic_api.configuration
 
 class DestinationsApiTests(unittest.TestCase):
     def setUp(self):
         api_key_file = os.path.join(os.path.dirname(__file__), "../", "api_key.txt")
-        systranGeographicApi.configuration.load_api_key(api_key_file)
-        self.api_client = systranGeographicApi.ApiClient()
-        self.destinations_api = systranGeographicApi.DestinationsApi(self.api_client)
+        systran_geographic_api.configuration.load_api_key(api_key_file)
+        self.api_client = systran_geographic_api.ApiClient()
+        self.destinations_api = systran_geographic_api.DestinationsApi(self.api_client)
 
     def test_geographic_destinations_list_get(self):
         result = self.destinations_api.geographic_destinations_list_get()
